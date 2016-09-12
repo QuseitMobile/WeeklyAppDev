@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (3.1.5)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1.2)
+  - RxCocoa (~> 2.6.0)
+  - RxSwift (~> 2.6.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
+
+PODFILE CHECKSUM: f0672c95fd48208c6db185a52e4f0c30729e980a
+
+COCOAPODS: 1.0.0
