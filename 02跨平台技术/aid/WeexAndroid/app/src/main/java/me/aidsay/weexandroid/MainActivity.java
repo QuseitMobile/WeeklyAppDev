@@ -23,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private WXSDKInstance mInstance;
 
-    private HashMap mConfigMap = new HashMap<String, Object>();
-
-    private String path = "HelloWeex.js";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,24 +61,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        flContainer.post(new Runnable() {
-            @Override
-            public void run() {
-                Rect outRect = new Rect();
-                MainActivity.this.getWindow().getDecorView().getWindowVisibleDisplayFrame(outRect);
-                mConfigMap.put("bundleUrl", path);
-                mInstance.render(
-                        TAG,
-                        WXFileUtils.loadAsset(path, MainActivity.this),
-                        mConfigMap,
-                        null,
-                        ScreenUtil.getDisplayWidth(MainActivity.this),
-                        ScreenUtil.getDisplayHeight(MainActivity.this),
-                        WXRenderStrategy.APPEND_ASYNC
-                );
-            }
-        });
-
+        mInstance.render(
+                TAG,
+                WXFileUtils.loadAsset("HelloWeex.js", MainActivity.this),
+                null,
+                null,
+                ScreenUtil.getDisplayWidth(MainActivity.this),
+                ScreenUtil.getDisplayHeight(MainActivity.this),
+                WXRenderStrategy.APPEND_ASYNC
+        );
         mInstance.onActivityCreate();
     }
 
